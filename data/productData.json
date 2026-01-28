@@ -1,0 +1,105 @@
+{
+  "Dog": {
+    "ADULT DOGS-SMALL BREEDS": [
+      {
+        "title": "KANGAROO",
+        "desc": "WITH LAMB, RICE AND VEGETABLES FOR DOGS",
+        "subdesc": "Good for Everything, Specially For Stomachs",
+        "price": 699,
+        "img": "/uploads/kangaroo.png"
+      },
+      {
+        "title": "OCEAN FISH SMALL BITE",
+        "desc": "WITH LAMB, OATS, RICE AND VEGETABLES FOR DOGS",
+        "subdesc": "Good for Everything, Specially For Stomachs",
+        "price": 749,
+        "img": "/uploads/kangaroo.png"
+      },
+      {
+        "title": "WILD TUNA",
+        "desc": "WITH LAMB AND VEGETABLES FOR DOGS (GF)",
+        "subdesc": "Good for Everything, Specially For Stomachs",
+        "price": 749,
+        "img": "/uploads/kangaroo.png"
+      },
+      {
+        "title": "CHICKEN",
+        "desc": "WITH TURKEY AND VEGETABLES FOR DOGS",
+        "subdesc": "Good for Everything, Specially For Stomachs",
+        "price": 749,
+        "img": "/uploads/kangaroo.png"
+      },
+      {
+        "title": "TONE AND TRIMB LAMB",
+        "desc": "WITH OATS AND VEGETABLES FOR DOGS",
+        "subdesc": "Good for Everything, Specially For Stomachs",
+        "price": 749,
+        "img": "/uploads/kangaroo.png"
+      }
+    ],
+    "ADULT DOGS-MEDIUM AND LARGE BREEDS": [
+      {
+        "title": "Pedigree Adult Large Breed Beef & Vegetables",
+        "desc": "Tailored nutrition for large breed dogs",
+        "subdesc": "Maintains joint health and strength",
+        "price": 999,
+        "img": "/uploads/pedigree-large.jpg"
+      },
+      {
+        "title": "Drools Adult Large Breed Chicken & Egg",
+        "desc": "Enhanced protein and calcium levels",
+        "subdesc": "Promotes healthy bones and muscles",
+        "price": 899,
+        "img": "/uploads/drools-large.jpg"
+      }
+    ],
+    "GRAIN FREE DOG FOOD": [],
+    "SUPPLEMENTS AND TREATS": []
+  },
+
+  "Cat": {
+    "NATURAL CAT FOOD": [
+      {
+        "title": "Whiskas Kitten Ocean Fish",
+        "desc": "For kittens under 1 year old",
+        "subdesc": "Supports eye and brain development",
+        "price": 399,
+        "img": "/uploads/whiskas-kitten.jpg"
+      },
+      {
+        "title": "Me-O Kitten Tuna",
+        "desc": "Rich in Omega 3 & 6 and DHA",
+        "subdesc": "Supports healthy growth and shiny coat",
+        "price": 349,
+        "img": "/uploads/meo-kitten.jpg"
+      }
+    ],
+    "GRAIN FREE CAT FOOD": [
+      {
+        "title": "Whiskas Adult Chicken Flavour",
+        "desc": "Balanced nutrition for adult cats",
+        "subdesc": "Supports urinary tract health",
+        "price": 499,
+        "img": "/uploads/whiskas-adult.jpg"
+      },
+      {
+        "title": "Me-O Mackerel Cat Food",
+        "desc": "Complete and balanced nutrition for adults",
+        "subdesc": "Enhances skin and coat health",
+        "price": 459,
+        "img": "/uploads/meo-adult.jpg"
+      }
+    ],
+    "SUPPLEMENTS AND TREATS": []
+  },
+
+  "Grooming": {
+    "GROOMING KIT FOR DOGS": [],
+    "GROOMING KIT FOR CATS": []
+  },
+
+  "Toys": {
+    "TOY SET FOR DOGS": [],
+    "TOY SET FOR CATS": []
+  }
+}
