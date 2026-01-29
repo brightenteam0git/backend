@@ -1,5 +1,6 @@
 import express from "express";
-import FAQ2 from "../models/FAQ2.js";
+import FAQ2 from "../models/faq2.js";
+
 
 const router = express.Router();
 
