@@ -1,12 +1,15 @@
+// server.js
 import express from "express";
 import path from "path";
 import cors from "cors";
 import mongoose from "mongoose";
+import { fileURLToPath } from "url";
+
+// ===== ROUTES =====
 import categoryRoutes from "./routes/categoryRoutes.js";
 import subCategoryRoutes from "./routes/subcategoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import heroRoutes from "./routes/heroRoutes.js";
-import { fileURLToPath } from "url";
 import promoRoutes from "./routes/promoRoutes.js";
 import petWellbeingRoutes from "./routes/petWellbeingRoutes.js";
 import videoSectionRoutes from "./routes/videoSectionRoutes.js";
@@ -22,31 +25,42 @@ import faqRoutes from "./routes/faqRoutes.js";
 import faq2Routes from "./routes/faq2Routes.js";
 import contactFormRoutes from "./routes/contactFormRoutes.js";
 import dashboardRoutes from "./routes/dashboard.js";
+
+// ===== FILE PATH SETUP =====
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
+// ===== APP SETUP =====
 const app = express();
 app.use(cors());
-app.use(express.json({ limit: '10mb' }));
+app.use(express.json({ limit: "10mb" }));
+
+// ===== MONGODB CONNECTION =====
+const mongoURI = process.env.MONGO_URI;
+
+if (!mongoURI) {
+  console.error("❌ MONGO_URI environment variable not set!");
+  process.exit(1); // Stop app if MongoDB URI missing
+}
 
 mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB error:", err));
+  .connect(mongoURI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err.message);
+    process.exit(1); // Stop app if cannot connect
+  });
 
-
-
+// ===== LOGGING =====
 app.use((req, res, next) => {
-  console.log("REQ:", req.method, req.url);
+  console.log(`REQ: ${req.method} ${req.url}`);
   next();
 });
 
+// ===== STATIC FILES =====
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-
-
-
+// ===== API ROUTES =====
 app.use("/api/categories", categoryRoutes);
 app.use("/api/subcategories", subCategoryRoutes);
 app.use("/api/products", productRoutes);
@@ -67,5 +81,11 @@ app.use("/api/faq2", faq2Routes);
 app.use("/api/contact-form", contactFormRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
+// ===== HEALTH CHECK =====
+app.get("/", (req, res) => {
+  res.send("Server is running ✅");
+});
+
+// ===== SERVER START =====
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
